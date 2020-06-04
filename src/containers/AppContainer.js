@@ -2,8 +2,8 @@ import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch'
 import ZipResponse from '../components/ZipResponse';
 import Zip from '../components/Zip';
-
-
+import React, { Component } from 'react';
+import { render } from 'react-dom';
 
 function AppContainer(props) {
 
