@@ -41,6 +41,7 @@ function Zip(props) {
                         }}
                     ></input>   
                     
+                    <p>Hello World</p>
                 </div>
             </div>
             <div className="pl-3 row">
