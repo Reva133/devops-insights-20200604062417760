@@ -22,10 +22,12 @@ function AppContainer(props) {
 
 	function setRadioButton(event){
 		if(event.target.id ='nz'){
-			document.getElementById('us').checked = false;
+			//document.getElementById('us').checked = false;
+			alert('help');
 		}
 		else{
-			document.getElementById('nz').checked = false;
+			//document.getElementById('nz').checked = false;
+			alert('help');
 		}
 	}
 	
