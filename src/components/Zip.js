@@ -16,23 +16,7 @@ function Zip(props) {
         }
     };
 
-//Unchecks the opposing radio button
-function switchRadioButtons(id){
-	//radio buttons to know
-	var usa = document.getElementById("us");
-	var nz = document.getElementById("nz");
-	
-	if(id == "nz"){//if we have clicked on nz
-		usa.checked = false;
-	}
-	else{//if we have clicked on us
-		nz.checked = false;
-	}
-}
 
-function validateNZ(event){
-	alert(event.target.value);
-}
 
     return (
         <div className="col-sm-4">
@@ -64,12 +48,7 @@ function validateNZ(event){
                         }}
                     ></input>   
                     
-                    <div id = "options">
-                    	<input type = "radio" id ="us" name = "usa" onclick ={document.getElementById('nz').checked = false}></input>
-                    	<label for="us">US Zip Codes</label>
-                    	<input type = "radio" id ="nz" name = "new" onclick ={document.getElementById('us').checked = false}></input>
-                    	<label for="nz">NZ Zip Codes</label>
-                    </div>
+                    
                 </div>
             </div>
             <div className="pl-3 row">
