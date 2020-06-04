@@ -23,7 +23,7 @@ sinon.spy(resMock, "send");
 
 describe('Get Weather', function() {
 
-  it('without City name', function() {
+  it('with without zip code', function() {
     reqMock = {
       query: {
 
@@ -35,7 +35,7 @@ describe('Get Weather', function() {
     assert(resMock.status.lastCall.calledWith(400), 'Unexpected status code:' + resMock.status.lastCall.args);
   });
 
-  it('with valid City name format and error from request call because doesnt exist within set of nz cities', function() {
+  it('with incomplete zip code', function() {
     reqMock = {
       query: {
         zip: 'Hamilto'
@@ -106,7 +106,7 @@ it('with invalid City name format and error from request call', function() {
     assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
   });
   
-  it('with valid City Name Auckland', function() {
+  it('with valid zip code', function() {
     reqMock = {
       query: {
         zip: 'Auckland'
