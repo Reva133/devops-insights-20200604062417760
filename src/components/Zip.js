@@ -41,7 +41,10 @@ function Zip(props) {
                         }}
                     ></input>   
                     
-                    <p>Hello World</p>
+                    <div id = "options">
+                    	<input type = "radio" id ="us" name = "usa"></input>
+                    	<input type = "radio" id ="nz" name = "new"></input>
+                    </div>
                 </div>
             </div>
             <div className="pl-3 row">
