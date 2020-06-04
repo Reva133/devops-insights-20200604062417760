@@ -28,11 +28,6 @@ function Zip(props) {
                     `}
                     </style>
                     
-                    <input type = "radio" id ="usa" name = "usaZip">
-                    <label for="usa">USA ZIP Codes</label><br>
-                    
-                    <input type = "radio" id ="nz" name = "nzZip">
-                    <label for="nz">NZ ZIP Codes</label><br>
                     
                     <input 
                         type="text" 
