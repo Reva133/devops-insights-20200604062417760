@@ -19,6 +19,16 @@ function AppContainer(props) {
         setResponseData('');
     }
 
+
+	function setRadioButton(event){
+		if(e.target.id ='nz'){
+			document.getElementById('us').checked = false;
+		}
+		else{
+			document.getElementById('nz').checked = false;
+		}
+	}
+	
     return (
         <div>
             <div className="row mt-4">
@@ -26,10 +36,10 @@ function AppContainer(props) {
                 <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
                 
                 <div id="optionGroup">
-	                <input type = "radio" id ="us" name = "usa" onclick ={document.getElementById('us').checked = false}></input>
+	                <input type = "radio" id ="us" name = "usa" onclick ={setRadioButton}></input>
 	            	<label for="us">US Zip Codes</label>
 	            
-	            	<input type = "radio" id ="nz" name = "new" onclick ={document.getElementById('us').checked = false}></input>
+	            	<input type = "radio" id ="nz" name = "new" onclick ={setRadioButton}></input>
 	            	<label for="nz">NZ Zip Codes</label>
                 </div>
                 
