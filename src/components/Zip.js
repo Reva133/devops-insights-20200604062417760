@@ -43,7 +43,9 @@ function Zip(props) {
                     
                     <div id = "options">
                     	<input type = "radio" id ="us" name = "usa"></input>
+                    	<label for="us">US Zip Codes</label>
                     	<input type = "radio" id ="nz" name = "new"></input>
+                    	<label for="nz">NZ Zip Codes</label>
                     </div>
                 </div>
             </div>
