@@ -5,6 +5,7 @@ function Zip(props) {
     const [validationError, setValidationError] = useState(null);
 
     const validate = (event) => {
+    	console.log(event.target.value);
         const cityName = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
         const validCity = cityName.test(event.target.value);
 
