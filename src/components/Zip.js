@@ -16,6 +16,19 @@ function Zip(props) {
         }
     };
 
+//Unchecks the opposing radio button
+function switchRadioButtons(id){
+	//radio buttons to know
+	var usa = document.getElementById("us");
+	var nz = document.getElementById("nz");
+	
+	if(id == "nz"){//if we have clicked on nz
+		usa.checked = false;
+	}
+	else{//if we have clicked on us
+		nz.checked = false;
+	}
+}
     return (
         <div className="col-sm-4">
             <div className="row">
@@ -42,9 +55,9 @@ function Zip(props) {
                     ></input>   
                     
                     <div id = "options">
-                    	<input type = "radio" id ="us" name = "usa"></input>
+                    	<input type = "radio" id ="us" name = "usa" onclick ="switchRadioButtons(this.id)"></input>
                     	<label for="us">US Zip Codes</label>
-                    	<input type = "radio" id ="nz" name = "new"></input>
+                    	<input type = "radio" id ="nz" name = "new" onclick ="switchRadioButtons(this.id)"></input>
                     	<label for="nz">NZ Zip Codes</label>
                     </div>
                 </div>
