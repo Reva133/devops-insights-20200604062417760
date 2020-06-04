@@ -54,7 +54,27 @@ describe('Get Weather', function() {
     assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
   });
 
-  it('with valid City Name', function() {
+
+it('with invalid City name format and error from request call', function() {
+    reqMock = {
+      query: {
+        zip: '1234556'
+      }
+    };
+
+    const request = function( obj, callback ){
+      callback("error", null, null);
+    };
+
+    apiv1.__set__("request", request);
+
+    apiv1.getWeather(reqMock, resMock);
+
+    assert(resMock.status.lastCall.calledWith(400), 'Unexpected response:' + resMock.status.lastCall.args);
+    assert(resMock.send.lastCall.calledWith('Failed to get the data'), 'Unexpected response:' + resMock.send.lastCall.args);
+  });
+
+  it('with valid City Name Hamilton', function() {
     reqMock = {
       query: {
         zip: 'Hamilton'
@@ -84,6 +104,37 @@ describe('Get Weather', function() {
 
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
     assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
-    //assert(resMock.send.lastCall.args[0].weather === 'Conditions are cold and temperature is 78 F', 'Unexpected response:' + resMock.send.lastCall.args[0].weather);
+  });
+  
+  it('with valid City Name Auckland', function() {
+    reqMock = {
+      query: {
+        zip: 'Hamilton'
+      }
+    };
+
+    const body = {
+      cod: 200,
+      name: 'Auckland',
+      weather: [
+        {
+          main: 'Clouds'
+        }
+      ],
+      main: {
+        temp: 11.71
+      }
+    };
+
+    const request = function( obj, callback ){
+      callback(null, null, body);
+    };
+
+    apiv1.__set__("request", request);
+
+    apiv1.getWeather(reqMock, resMock);
+
+    assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
+    assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
   });
 });
