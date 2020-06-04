@@ -55,9 +55,9 @@ function switchRadioButtons(id){
                     ></input>   
                     
                     <div id = "options">
-                    	<input type = "radio" id ="us" name = "usa" onclick ="switchRadioButtons(this.id)"></input>
+                    	<input type = "radio" id ="us" name = "usa" onclick ="(function(){document.getElementById('nz').checked = false;})()">
                     	<label for="us">US Zip Codes</label>
-                    	<input type = "radio" id ="nz" name = "new" onclick ="switchRadioButtons(this.id)"></input>
+                    	<input type = "radio" id ="nz" name = "new" onclick ="(function(){document.getElementById('us').checked = false;})()">
                     	<label for="nz">NZ Zip Codes</label>
                     </div>
                 </div>
