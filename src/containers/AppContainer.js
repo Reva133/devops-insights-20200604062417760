@@ -24,6 +24,15 @@ function AppContainer(props) {
             <div className="row mt-4">
                 <div className="col-sm-4"></div>
                 <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
+                
+                <div id="optionGroup">
+	                <input type = "radio" id ="us" name = "usa" onclick ={document.getElementById('us').checked = false}>
+	            	<label for="us">US Zip Codes</label>
+	            
+	            	<input type = "radio" id ="nz" name = "new" onclick ={document.getElementById('us').checked = false}>
+	            	<label for="nz">NZ Zip Codes</label>
+                </div>
+                
                 <div className="col-sm-4"></div>
             </div>
             <div className="row mt-4">
