@@ -38,12 +38,7 @@ function Zip(props) {
                         placeholder="US Zip Code (5 digit)"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
-                            	if(document.getElementById('us').checked){
                             		validate(event);
-                            	}
-                            	else{
-                            		validateNZ(event);
-                            	}
                             }
                         }}
                     ></input>   
