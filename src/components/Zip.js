@@ -29,6 +29,11 @@ function switchRadioButtons(id){
 		nz.checked = false;
 	}
 }
+
+function validateNZ(event){
+	alert(event.target.value);
+}
+
     return (
         <div className="col-sm-4">
             <div className="row">
@@ -49,7 +54,12 @@ function switchRadioButtons(id){
                         placeholder="US Zip Code (5 digit)"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
-                                validate(event);
+                            	if(document.getElementById('us').checked){
+                            		validate(event);
+                            	}
+                            	else{
+                            		validateNZ(event);
+                            	}
                             }
                         }}
                     ></input>   
