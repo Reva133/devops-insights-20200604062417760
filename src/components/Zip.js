@@ -20,17 +20,19 @@ function Zip(props) {
         <div className="col-sm-4">
             <div className="row">
                 <div className="col-sm-10">
+                    
                     <style jsx="true">{`
                         .form-control::-webkit-input-placeholder {
                             color: #ddd;
                         }
                     `}
                     </style>
+                    
                     <input type = "radio" id ="usa" name = "usaZip">
-                    <label for="usaZip">USA ZIP Codes</label>
+                    <label for="usa">USA ZIP Codes</label><br>
                     
                     <input type = "radio" id ="nz" name = "nzZip">
-                    <label for="nzZip">NZ ZIP Codes</label>
+                    <label for="nz">NZ ZIP Codes</label><br>
                     
                     <input 
                         type="text" 
@@ -43,6 +45,7 @@ function Zip(props) {
                             }
                         }}
                     ></input>   
+                    
                 </div>
             </div>
             <div className="pl-3 row">
