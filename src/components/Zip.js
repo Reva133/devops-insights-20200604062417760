@@ -6,13 +6,19 @@ function Zip(props) {
 
     const validate = (event) => {
         const zipCodePattern = /^\d{5}$/;
-        const valid = zipCodePattern.test(event.target.value);
-        if (!valid) {
-            setValidationError('* should be a 5 digit number only');
-            props.clearResponse();
-        } else {
+        const cityName = /^[a-zA-Z]+(?:[\s-][a-zA-Z]+)*$/;
+        const validCity = cityName.test(event.target.value);
+        const validZip = zipCodePattern.test(event.target.value);
+        
+        if (validZip) {//valid zip code
             setValidationError('');
             props.onZipChange(event.target.value);
+        }else if(validCity) {//valid city code
+        	setValidationError('');
+        	
+        }else {
+            setValidationError('* should be a 5 digit number only or city name');
+            props.clearResponse();
         }
     };
 
@@ -35,7 +41,7 @@ function Zip(props) {
                         type="text" 
                         className="form-control" 
                         id="usr" 
-                        placeholder="US Zip Code (5 digit)"
+                        placeholder="US Zip Code (5 digit) or NZ City Name"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                             		validate(event);
