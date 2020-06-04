@@ -38,7 +38,6 @@ function AppContainer(props) {
             <div className="row mt-4">
                 <div className="col-sm-2"></div>
                 <ZipResponse responseData={responseData} clearResponse={clearResponse}/>
-                <Map />
                 <div className="col-sm-2"></div>
             </div>    
         </div>
