@@ -21,7 +21,7 @@ function AppContainer(props) {
 
 
 	function setRadioButton(event){
-		if(e.target.id ='nz'){
+		if(event.target.id ='nz'){
 			document.getElementById('us').checked = false;
 		}
 		else{
