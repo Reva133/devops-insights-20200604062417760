@@ -109,7 +109,7 @@ it('with invalid City name format and error from request call', function() {
   it('with valid City Name Auckland', function() {
     reqMock = {
       query: {
-        zip: 'Hamilton'
+        zip: 'Auckland'
       }
     };
 
@@ -135,6 +135,6 @@ it('with invalid City name format and error from request call', function() {
     apiv1.getWeather(reqMock, resMock);
 
     assert(resMock.status.lastCall.calledWith(200), 'Unexpected response:' + resMock.status.lastCall.args);
-    assert(resMock.send.lastCall.args[0].city === 'Hamilton', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
+    assert(resMock.send.lastCall.args[0].city === 'Auckland', 'Unexpected response:' + resMock.send.lastCall.args[0].city);
   });
 });
