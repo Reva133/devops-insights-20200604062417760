@@ -14,7 +14,7 @@ function Zip(props) {
             props.clearResponse();
         }else {
             setValidationError('');
-        	props.onZipChange(event.target.value);
+        	props.onCityChange(event.target.value);
         }
     };
 
@@ -37,7 +37,7 @@ function Zip(props) {
                         type="text" 
                         className="form-control" 
                         id="usr" 
-                        placeholder="US Zip Code (5 digit) or NZ City Name"
+                        placeholder="NZ City Name"
                         onKeyPress={(event) => {
                             if (event.key === "Enter") {
                             		validate(event);

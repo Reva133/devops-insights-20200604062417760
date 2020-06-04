@@ -7,10 +7,10 @@ function AppContainer(props) {
 
     const [responseData, setResponseData] = useState('');
 
-    const handleZipChange = async (zipValue) => {
-        console.log(`--------- fetchData called zip:${zipValue}`)
+    const handleCityChange = async (cityName) => {
+        console.log(`--------- fetchData called zip:${cityName}`)
 
-        	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${zipValue},nz&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
+        	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${cityName},nz&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
         	const json = await res.json()
         	setResponseData(json);
     }
@@ -26,7 +26,7 @@ function AppContainer(props) {
         <div>
             <div className="row mt-4">
                 <div className="col-sm-4"></div>
-                <Zip onZipChange={handleZipChange} clearResponse={clearResponse}/>
+                <Zip onCityChange={handleCityChange} clearResponse={clearResponse}/>
                 
 
                 
