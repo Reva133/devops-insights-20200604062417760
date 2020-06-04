@@ -2,8 +2,7 @@ import React, { useState } from 'react';
 import fetch from 'isomorphic-unfetch'
 import ZipResponse from '../components/ZipResponse';
 import Zip from '../components/Zip';
-import { Component } from 'react';
-import { render } from 'react-dom';
+
 
 function AppContainer(props) {
 
@@ -21,20 +20,7 @@ function AppContainer(props) {
         setResponseData('');
     }
 
-class Map extends Component {
-  componentDidMount() {
-    const map = new window.google.maps.Map(document.getElementById('map'), {
-      center: { lat: 41.0082, lng: 28.9784 },
-      zoom: 8
-    });
-  }
 
-  render() {
-    return (
-      <div style={{ width: 500, height: 500 }} id="map" />
-    );
-  }
-}
 
 	
 	
