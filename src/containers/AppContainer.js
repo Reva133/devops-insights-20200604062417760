@@ -10,7 +10,7 @@ function AppContainer(props) {
     const handleZipChange = async (zipValue) => {
         console.log(`--------- fetchData called zip:${zipValue}`)
 
-        	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${zipValue},nz&appid=6b7b471967dd0851d0010cdecf28f829`)
+        	const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${zipValue},nz&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
         	const json = await res.json()
         	setResponseData(json);
     }
