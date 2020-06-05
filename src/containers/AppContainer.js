@@ -3,7 +3,7 @@ import fetch from 'isomorphic-unfetch'
 import ZipResponse from '../components/ZipResponse';
 import Zip from '../components/Zip';
 
-
+/*globals handlePointChange */
 function AppContainer(props) {
 
     const [responseData, setResponseData] = useState('');
@@ -20,7 +20,7 @@ function AppContainer(props) {
         setResponseData('');
     }
 
-	const window.handlePointChange = async (lng,lat) => {
+	var handlePointChange = async (lng,lat) => {
 		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lng}&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
 		const json = await res.json()
         setResponseData(json);
