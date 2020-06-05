@@ -31,7 +31,6 @@ function AppContainer(props) {
                 <div className="col-sm-4"></div>
                 <Zip onCityChange={handleCityChange} clearResponse={clearResponse}/>
                 
-
                 
                 <div className="col-sm-4"></div>
             </div>
