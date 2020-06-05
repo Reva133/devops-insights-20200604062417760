@@ -26,6 +26,24 @@ function AppContainer(props) {
         setResponseData(json);
 	}
 
+	window.map.addListener('click', function(mapsMouseEvent) {
+        	
+          // Close the current InfoWindow.
+          //infoWindow.close();
+
+          // Create a new InfoWindow.
+          //infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+          //infoWindow.setContent(mapsMouseEvent.latLng.toString());
+          
+          var lng = mapsMouseEvent.latLng.lng();
+          console.log(lng);
+          var lat = mapsMouseEvent.latLng.lat();
+          console.log(lat);
+          
+          handlePointChange(lat,lng);
+          
+          //infoWindow.open(map);
+        });
 	
 	
 	
