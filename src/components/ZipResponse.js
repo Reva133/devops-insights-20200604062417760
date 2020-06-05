@@ -18,10 +18,16 @@ function ZipResponse(props) {
     if(props.responseData.cod === 200) {
     	
     	//we can get long and lat
-    	var lon = props.responseData.coord.lon;
+    	var _lon = props.responseData.coord.lon;
     	console.log(lon);
-    	var lat = props.responseData.coord.lat;
+    	var _lat = props.responseData.coord.lat;
     	console.log(lat);
+    	
+    	//making a marker
+    	var city ={lat:_lat,lng:_lon};
+    	
+    	//make new marker
+    	var marker = new google.maps.Marker({position: city, map: window.map});
     	
         return (
             <div className="col-sm-8">
