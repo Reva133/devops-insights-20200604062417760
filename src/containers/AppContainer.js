@@ -23,20 +23,13 @@ function AppContainer(props) {
 	var handlePointChange = async (lng,lat) => {
 		console.log(typeof lng);
 		console.log(typeof lat);
-		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lng.toString()}&lon=${lat.toString()}&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
+		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat.toString()}&lon=${lng.toString()}&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
 		const json = await res.json()
         setResponseData(json);
 	}
 
 	window.map.addListener('click', function(mapsMouseEvent) {
         	
-          // Close the current InfoWindow.
-          //infoWindow.close();
-
-          // Create a new InfoWindow.
-          //infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
-          //infoWindow.setContent(mapsMouseEvent.latLng.toString());
-          
           var lng = Math.round(mapsMouseEvent.latLng.lng());
           console.log(lng);
           var lat = Math.round(mapsMouseEvent.latLng.lat());
@@ -44,7 +37,6 @@ function AppContainer(props) {
           
           handlePointChange(lat,lng);
           
-          //infoWindow.open(map);
         });
 	
 	
