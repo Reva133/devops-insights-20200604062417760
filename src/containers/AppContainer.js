@@ -35,12 +35,12 @@ function AppContainer(props) {
           //infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
           //infoWindow.setContent(mapsMouseEvent.latLng.toString());
           
-          var lng = mapsMouseEvent.latLng.lng();
+          var lng = Math.round(mapsMouseEvent.latLng.lng());
           console.log(lng);
-          var lat = mapsMouseEvent.latLng.lat();
+          var lat = Math.round(mapsMouseEvent.latLng.lat());
           console.log(lat);
           
-          handlePointChange(parseFloat(lat),parseFloat(lng));
+          handlePointChange(lat,lng);
           
           //infoWindow.open(map);
         });
