@@ -16,6 +16,13 @@ function ZipResponse(props) {
     }
 
     if(props.responseData.cod === 200) {
+    	
+    	//we can get long and lat
+    	var lon = props.responseData.coord.lon;
+    	console.log(lon);
+    	var lat = props.responseData.coord.lat;
+    	console.log(lat);
+    	
         return (
             <div className="col-sm-8">
                 <table className="table table-info table-hover">
