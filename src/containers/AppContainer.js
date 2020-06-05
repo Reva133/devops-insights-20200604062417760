@@ -40,7 +40,7 @@ function AppContainer(props) {
           var lat = mapsMouseEvent.latLng.lat();
           console.log(lat);
           
-          handlePointChange(lat,lng);
+          handlePointChange(parseFloat(lat),parseFloat(lng));
           
           //infoWindow.open(map);
         });
