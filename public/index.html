@@ -37,6 +37,7 @@
         padding: 0;
       }
     </style>
+    <script src="../src/containers/AppContainer.js"></script>
   </head>
   <body>
   
@@ -48,27 +49,34 @@
     <script>
       
       function initMap() {
-      	var myLatlng = {lat: -25.363, lng: 131.044};
+      	var myLatlng = {lat: 37.7870, lng: 175.2793};
       	//make map
         window.map = new google.maps.Map(document.getElementById('map'), {
           center: myLatlng,
           zoom: 8
         });
         //make
-        var infoWindow = new google.maps.InfoWindow(
-            {content: 'Click the map to get Lat/Lng!', position: myLatlng});
-        infoWindow.open(map);
+        //var infoWindow = new google.maps.InfoWindow(
+         //   {content: 'Click the map to get Lat/Lng!', position: myLatlng});
+        //infoWindow.open(map);
         
         
         // Configure the click listener.
         map.addListener('click', function(mapsMouseEvent) {
           // Close the current InfoWindow.
-          infoWindow.close();
+          //infoWindow.close();
 
           // Create a new InfoWindow.
-          infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
-          infoWindow.setContent(mapsMouseEvent.latLng.toString());
-          infoWindow.open(map);
+          //infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+          //infoWindow.setContent(mapsMouseEvent.latLng.toString());
+          var lng = mapsMouseEvent.latlng.lng();
+          console.log(lng);
+          var lat = mapsMouseEvent.latlng.lat();
+          console.log(lat);
+          
+          handlePointChange(lat,lng);
+          
+          //infoWindow.open(map);
         });
         
       }
