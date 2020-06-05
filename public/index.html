@@ -48,10 +48,29 @@
     <script>
       
       function initMap() {
+      	var myLatlng = {lat: -25.363, lng: 131.044};
+      	//make map
         window.map = new google.maps.Map(document.getElementById('map'), {
-          center: {lat: -34.397, lng: 150.644},
+          center: myLatlng,
           zoom: 8
         });
+        //make
+        var infoWindow = new google.maps.InfoWindow(
+            {content: 'Click the map to get Lat/Lng!', position: myLatlng});
+        infoWindow.open(map);
+        
+        
+        // Configure the click listener.
+        map.addListener('click', function(mapsMouseEvent) {
+          // Close the current InfoWindow.
+          infoWindow.close();
+
+          // Create a new InfoWindow.
+          infoWindow = new google.maps.InfoWindow({position: mapsMouseEvent.latLng});
+          infoWindow.setContent(mapsMouseEvent.latLng.toString());
+          infoWindow.open(map);
+        });
+        
       }
       
       //function that adds a marker to the map
@@ -60,6 +79,9 @@
     	var marker = new google.maps.Marker({position: city, map: window.map});
     	window.map.panTo(marker.getPosition());
       }
+      
+
+ 
       
     </script>
     <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAUNURf1KG8hsq2Tr2flFVyGvxmptuVymc&callback=initMap"
