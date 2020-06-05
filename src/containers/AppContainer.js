@@ -21,7 +21,9 @@ function AppContainer(props) {
     }
 
 	var handlePointChange = async (lng,lat) => {
-		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${parseFloat(lat)}&lon=${parseFloat(lng)}&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
+		console.log(typeof lng);
+		console.log(typeof lat);
+		const res = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat.toFixed(2)}&lon=${lng.toFixed(2)}&units=metric&appid=6b7b471967dd0851d0010cdecf28f829`)
 		const json = await res.json()
         setResponseData(json);
 	}
