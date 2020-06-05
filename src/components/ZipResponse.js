@@ -26,7 +26,7 @@ function ZipResponse(props) {
     	//making a marker
     	var city ={lat:_lat,lng:_lon};
     	
-    	addMarker(city);
+    	window.addMarker(city);
     	
         return (
             <div className="col-sm-8">
